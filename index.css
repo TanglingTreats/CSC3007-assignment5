@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+#map {
+    width: 1000px;
+    height: 600px;
+}
+
+.tooltip {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-transform: capitalize;
+}
+
+.heading {
+    font-family: 'Roboto', sans-serif;
+    padding: 0.3rem 2rem;
+}
+
+.content {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+.column {
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+.align-center {
+    align-items: center;
+}
+
+.mr-1 {
+    margin-right: 1rem;
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 640px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    #checkboxes {
+        width: 90%;
+    }
+    .heading {
+        margin-top: 5px;
+    }
+    .content {
+        height: 80%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
