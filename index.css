@@ -11,6 +11,12 @@ body {
     height: 600px;
 }
 
+.circle-label {
+    color: black;
+    font-size: large;
+    text-align: center;
+}
+
 .tooltip {
     padding: 10px;
     background-color: white;
