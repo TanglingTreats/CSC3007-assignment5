@@ -71,9 +71,6 @@ getUrl(apiUrl).then((data) => {
     west: pm25_hourly.west,
   };
 
-  console.log(centreReading);
-  //formatDate(updatedTime, new Date(data.items[0].update_timestamp));
-  //formatData(tBody, data.items[0].readings);
   var centreCircle = L.circle(centreLatLong, {
     color: d3.interpolateYlOrRd(colorScale(reading.centre)),
     fillColor: d3.interpolateYlOrRd(colorScale(reading.centre)),
