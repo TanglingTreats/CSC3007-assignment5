@@ -57,6 +57,8 @@ let southReading = 14;
 let eastReading = 14;
 let westReading = 14;
 
+let colorScale = d3.scaleLinear().domain([0, 251]).range([0, 1]);
+
 getUrl(apiUrl).then((data) => {
   console.log(data);
   const pm25_hourly = data.items[0].readings.pm25_twenty_four_hourly;
@@ -73,8 +75,8 @@ getUrl(apiUrl).then((data) => {
   //formatDate(updatedTime, new Date(data.items[0].update_timestamp));
   //formatData(tBody, data.items[0].readings);
   var centreCircle = L.circle(centreLatLong, {
-    color: "red",
-    fillColor: "#f03",
+    color: d3.interpolateYlOrRd(colorScale(reading.centre)),
+    fillColor: d3.interpolateYlOrRd(colorScale(reading.centre)),
     fillOpacity: 0.5,
     radius: 1500,
   }).addTo(map);
@@ -88,8 +90,8 @@ getUrl(apiUrl).then((data) => {
   }).addTo(map);
 
   var northCircle = L.circle(northLatLong, {
-    color: "red",
-    fillColor: "#f03",
+    color: d3.interpolateYlOrRd(colorScale(reading.north)),
+    fillColor: d3.interpolateYlOrRd(colorScale(reading.north)),
     fillOpacity: 0.5,
     radius: 1500,
   }).addTo(map);
@@ -103,8 +105,8 @@ getUrl(apiUrl).then((data) => {
   }).addTo(map);
 
   var southCircle = L.circle(southLatLong, {
-    color: "red",
-    fillColor: "#f03",
+    color: d3.interpolateYlOrRd(colorScale(reading.south)),
+    fillColor: d3.interpolateYlOrRd(colorScale(reading.south)),
     fillOpacity: 0.5,
     radius: 1500,
   }).addTo(map);
@@ -118,8 +120,8 @@ getUrl(apiUrl).then((data) => {
   }).addTo(map);
 
   var eastCircle = L.circle(eastLatLong, {
-    color: "red",
-    fillColor: "#f03",
+    color: d3.interpolateYlOrRd(colorScale(reading.east)),
+    fillColor: d3.interpolateYlOrRd(colorScale(reading.east)),
     fillOpacity: 0.5,
     radius: 1500,
   }).addTo(map);
@@ -133,8 +135,8 @@ getUrl(apiUrl).then((data) => {
   }).addTo(map);
 
   var westCircle = L.circle(westLatLong, {
-    color: "red",
-    fillColor: "#f03",
+    color: d3.interpolateYlOrRd(colorScale(reading.west)),
+    fillColor: d3.interpolateYlOrRd(colorScale(reading.west)),
     fillOpacity: 0.5,
     radius: 1500,
   }).addTo(map);
